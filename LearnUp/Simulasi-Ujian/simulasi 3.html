@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hasil Ujian - Learn Up</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333;}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px; /* spasi antar menu */
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000; /* atau warna font aslinya */
+      font-family: 'Poppins', sans-serif; /* atau font yang kamu pakai */
+      font-size: 18px; /* sesuaikan dengan desain awalmu */
+      font-weight: 400; /* atau 600 kalau bold */
+    }
+
+    nav ul li a.active {
+      font-weight: 700;
+      color: #0d2b53; /* warna khusus untuk item aktif */
+    }
+
+    nav ul li a:hover {
+      color: #1a1a1a; /* efek hover */
+    }
+
+    footer {
+      background: #4B7DAF;
+      color: white;
+      padding: 60px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* SECTION TENGAH (HASIL UJIAN) */
+    .result-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .result-section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .progress-bar {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      height: 4px;
+      background: #ddd;
+      position: relative;
+    }
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 85%;
+      background: #4B7DAF;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      max-width: 600px;
+      margin: 10px auto 40px;
+      font-size: 14px;
+      color: #777;
+    }
+    .details {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .detail-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+    }
+    .detail-box span {
+      font-size: 14px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #4B7DAF;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .link-download {
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* ICON STYLE SEMENTARA (SIMPOL IF BELUM PAKAI LIBRARY ICON) */
+    .icon-clock {
+      width: 20px;
+      height: 20px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+    </div>
+  <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #888;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #043362;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+
+    <div>
+          <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+          </a>
+        </div>
+  </header>
+
+  <!-- SECTION TENGAH -->
+  <section class="result-section">
+    <h2>85% - Passed</h2>
+    <div class="progress-bar"></div>
+    <div class="progress-label">
+      <span>15% Incorrect</span>
+      <span>85%</span>
+    </div>
+    <div class="details">
+      <div class="detail-box">
+        <span class="icon-clock"></span>
+        <span>Duration<br>120 minutes</span>
+      </div>
+      <div class="detail-box">
+        <span class="icon-clock"></span>
+        <span>Duration<br>120 minutes</span>
+      </div>
+    </div>
+    <button class="btn">View Explanation</button>
+    <br>
+    <a href="#" class="link-download">Download Certificate</a>
+    <br><br>
+    <button class="btn">Retake Quiz</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div style="flex: 1 1 400px;">
+        <img src="Learn Up Logo Putih.png" alt="Logo" style="height: 150px; margin-bottom: 20px;">
+        <p style="line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+          At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class,
+          hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step
+          in your career journey.
+        </p>
+        <h4 style="font-weight: 600; margin-bottom: 10px;">Subscribe Our Newsletter</h4>
+        <form style="display: flex; max-width: 400px;">
+          <input type="email" placeholder="Your Email address" style="padding: 12px; border-radius: 8px 0 0 8px; border: none; flex: 1;">
+          <button style="padding: 12px 20px; background: #002D5B; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer;">▶</button>
+        </form>
+      </div>
+
+      <div style="flex: 1 1 250px;">
+        <h3 style="margin-bottom: 20px; font-weight: 700;">Contact <span style="color: #001F3F">Us</span></h3>
+        <p style="margin-bottom: 10px; line-height: 1.6;">
+          📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+        </p>
+        <p style="margin-bottom: 10px;">📧 learnup@ac.id</p>
+        <p style="margin-bottom: 10px;">📞 +62 8428448903<br>📞 +62 9475484959</p>
+        <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 20px;">
+          <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 14px; border-top: 1px solid #ffffff33; padding-top: 20px;">
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </footer>
+</body>
+</html>

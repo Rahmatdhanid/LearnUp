@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page LearnUp</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #FFFFFF;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1440px;
+      height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .bg-pattern {
+      position: absolute;
+      top: 5%;
+      left: 3%;
+      width: 94%;
+      height: 90%;
+      opacity: 0.2;
+    }
+
+    .blue-side {
+      position: absolute;
+      right: 0;
+      top: -20%;
+      width: 55%;
+      height: 150%;
+      background: #1A5B9D;
+      z-index: -1;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 25%;
+      height: 80;
+    }
+
+    .headline {
+      position: absolute;
+      top: 35%;
+      left: 7%;
+      width: 40%;
+      font-weight: 700;
+      font-size: 4vw;
+      line-height: 1.2;
+      color: #4B7DAF;
+      text-transform: capitalize;
+    }
+
+    .headline strong {
+      color: #001F3F;
+    }
+
+    .mockup {
+      position: absolute;
+      top: 18%;
+      left: 40%;
+      width: 55%;
+      height: auto;
+    }
+
+    a.btn-login, a.btn-create {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 700;
+      text-transform: capitalize;
+      line-height: 28px;
+      position: absolute;
+    }
+
+    a.btn-login {
+      top: 30px;
+      right: 120px;
+      width: 90px;
+      height: 28px;
+      background: #FFFFFF;
+      border: 1px solid #043362;
+      color: #000;
+      font-size: 12px;
+    }
+
+    a.btn-create {
+      top: 30px;
+      right: 20px;
+      width: 90px;
+      height: 28px;
+      background: #043362;
+      border: 1px solid #043362;
+      color: #FFFFFF;
+      font-size: 9px;
+    }
+
+    @media (max-width: 1024px) {
+      .headline {
+        font-size: 6vw;
+      }
+
+      .mockup {
+        width: 80%;
+        left: 10%;
+        top: 45%;
+      }
+
+      a.btn-login, a.btn-create {
+        top: 20px;
+        width: 80px;
+        height: 26px;
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bg-pattern">
+    </div>
+    <div class="blue-side"></div>
+    <img src="Learn Up logo.png" alt="Learn Up Logo" class="logo">
+    <div class="headline">
+      Online<br>Course &<br><strong>Training<br>Portal</strong>
+    </div>
+    <img src="Home Mockup.png" alt="Home Page" class="mockup">
+   <a href="/Login/login.html" class="btn-login">Log In</a>
+   <a href="/Sign-In/Sign In.html" class="btn-create">Create Account</a>
+  </div>
+</body>
+</html>

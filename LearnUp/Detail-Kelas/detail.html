@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Up - Dasar Microsoft Office</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #fff;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            border: 2px solid #043362;
+            background: #fff;
+            color: #043362;
+        }
+
+        .btn-primary {
+            background: #043362;
+            color: #fff;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #4B7DAF;
+            color: white;
+            padding: 60px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            flex: 1 1 300px;
+        }
+
+        .footer-logo img {
+            width: 150px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo p {
+            line-height: 1.6;
+        }
+
+        .newsletter {
+            flex: 1 1 300px;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            width: 70%;
+            margin-top: 8px;
+        }
+
+        .newsletter button {
+            padding: 12px 20px;
+            margin-top: 8px;
+            background: #043362;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer-col {
+            flex: 1 1 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-col p {
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4B7DAF 0%, #2563eb 100%);
+            color: white;
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="diagonal" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M0,10 L10,0" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23diagonal)"/></svg>');
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .word-icon { background: #2b579a; }
+        .excel-icon { background: #217346; }
+        .powerpoint-icon { background: #d24726; }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            padding: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-left {
+            flex: 2;
+        }
+
+        .content-right {
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #4B7DAF;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .objectives-list {
+            list-style: none;
+        }
+
+        .objectives-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: #22c55e;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+        }
+
+        .check-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .project-icon {
+            width: 40px;
+            height: 40px;
+            background: #4B7DAF;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .project-card h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Course Content Sidebar */
+        .course-sidebar {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .course-sidebar h3 {
+            color: #4B7DAF;
+            margin-bottom: 20px;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-item span {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .course-item .arrow {
+            color: #4B7DAF;
+            font-size: 18px;
+        }
+
+        .progress-circle {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4B7DAF 0%, #2563eb 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn.demo {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn.enroll {
+            background: white;
+            color: #4B7DAF;
+        }
+
+        .cta-btn.download {
+            background: #043362;
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 60px;
+            background: #f8fafc;
+        }
+
+        .tools-section h2 {
+            color: #4B7DAF;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tools-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: #4B7DAF;
+        }
+
+        .tool-icon img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4B7DAF;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .tool-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            header {
+                padding: 20px 30px;
+            }
+
+            header nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+        </div>
+        <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #043362;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #888;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+        <div>
+           <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+           </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icons">
+                <img src="microsoft detail.png" alt="Microsoft Logo">
+            </div>
+            <div class="hero-text">
+                <h1>Dasar Microsoft Office<br>
+                Penguasaan Word, Excel, &<br>
+                PowerPoint dari Pemula hingga<br>
+                Mahir</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-left">
+            <!-- About Section -->
+            <div class="section">
+                <h2>About The Course</h2>
+                <p class="about-text">
+                    Microsoft Office adalah kumpulan perangkat lunak produktivitas yang umum digunakan dalam berbagai keperluan administrasi, akademik, hingga profesional. Kursus ini dirancang untuk memberikan pemahaman mulai dari dasar hingga tingkat lanjut mengenai Word, Excel, dan PowerPoint, dilengkapi dengan keterampilan otomatisasi (coding) untuk meningkatkan efisiensi tinggi.
+                </p>
+            </div>
+
+            <!-- Objectives Section -->
+            <div class="section">
+                <h3>Objectives</h3>
+                <ul class="objectives-list">
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Mengoperasikan Microsoft Word untuk membuat dokumen profesional secara efisien</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Mengelola data menggunakan Microsoft Excel, termasuk untuk kalkulasi, dan analisa data tingkat lanjut</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Membuat presentasi yang menarik dan interaktif dengan Microsoft PowerPoint</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Menggunakan fitur-fitur lanjutan seperti mail merge, pivot table, dan animasi presentasi</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Menerapkan dasar-dasar Visual Basic for Applications (VBA) untuk mengotomatiskan tugas di Office</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Meningkatkan produktivitas kerja melalui penggunaan shortcut dan integrasi antaraplikasi Office</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Menyusun laporan, surat resmi, dan presentasi bisnis dengan struktur yang tepat</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"></div>
+                        <span>Menerapkan template dan format profesional dalam dokumen Office</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section">
+                <h2>Microsoft Office Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Word Formatting Project</h4>
+                        <p>Membuat dokumen resmi dengan format heading, margin, numbering yang profesional dan terstruktur</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Excel Budget Tracker</h4>
+                        <p>Membuat tracker budget menggunakan formula dan chart Excel</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Mail Merge Letter Project</h4>
+                        <p>Menggabungkan data dari Excel ke Word untuk surat massal</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>PowerPoint Business Pitch Deck</h4>
+                        <p>Presentasi bisnis dengan animasi dan desain yang menarik</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Protected Word Template Project</h4>
+                        <p>Template dokumen dengan proteksi dan form fields</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Office Integration Mini Project</h4>
+                        <p>Integrasi data antar aplikasi Office untuk workflow</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Automated Excel Report (VBA)</h4>
+                        <p>Otomatisasi laporan Excel menggunakan VBA macro</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon"><img src="icon detail 2.png" alt="Microsoft Logo"></div>
+                        <h4>Excel Data Analysis with Pivot Table</h4>
+                        <p>Analisis data menggunakan pivot table dan dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <!-- Course Content Sidebar -->
+            <div class="course-sidebar">
+                <h3>Course Content</h3>
+                <div class="course-item">
+                    <span>01 Microsoft Word</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>02 Microsoft Excel</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>03 Microsoft PowerPoint</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>04 Office Integration</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>05 File Management</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>06 Productivity Tips JS</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>07 Basic VBA Coding</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>08 Automating Excel Tasks</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>09 Word Automation</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>10 PowerPoint Automation</span>
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="course-item">
+                    <span>11 Final Project</span>
+                    <span class="arrow">⌄</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Wanna check more<br>about the course?</h2>
+        <div class="cta-buttons">
+            <a href="../Simulasi-Ujian/simulasi 1.html" class="demo-button" style="text-decoration: none;">
+               <button style="padding: 12px 24px; border: 2px solid white; background: #4B7DAF; color: white; border-radius: 10px; font-weight: 600;">
+    📊 Demo
+  </button>
+</a>
+            <a href="#" class="cta-btn enroll">Enroll Now</a>
+        </div>
+        <a href="#" class="cta-btn download">☁️ Download Curriculum</a>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <h2>Tools & Platforms</h2>
+        <div class="tools-grid">
+            <div class="tool-icon tool-word">
+                <img src="icon detail 1.png" alt="Microsoft Word">
+            </div>
+            <div class="tool-icon tool-excel">
+                <img src="icon detail 3.png" alt="Microsoft Excel">
+            </div>
+            <div class="tool-icon tool-powerpoint">
+                <img src="icon detail 4.png" alt="Microsoft PowerPoint">
+            </div>
+            <div class="tool-icon tool-outlook">
+                <img src="icon detail 5.png" alt="Microsoft Outlook">
+            </div>
+            <div class="tool-icon tool-vba">
+                <img src="icon detail 6.png" alt="Visual Basic for Applications">
+            </div>
+            <div class="tool-icon tool-office">
+                <img src="icon detail 7.png" alt="Microsoft Office">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 40px;">
+            <div style="flex: 1 1 400px;">
+                <img src="Learn Up Logo Putih.png" alt="Logo" style="height: 150px; margin-bottom: 20px;">
+                <p style="line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+                    At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class,
+                    hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step
+                    in your career journey.
+                </p>
+                <h4 style="font-weight: 600; margin-bottom: 10px;">Subscribe Our Newsletter</h4>
+                <form style="display: flex; max-width: 400px;">
+                    <input type="email" placeholder="Your Email address" style="padding: 12px; border-radius: 8px 0 0 8px; border: none; flex: 1;">
+                    <button style="padding: 12px 20px; background: #002D5B; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer;">▶</button>
+                </form>
+            </div>
+
+            <div style="flex: 1 1 250px;">
+                <h3 style="margin-bottom: 20px; font-weight: 700;">Contact <span style="color: #001F3F">Us</span></h3>
+                <p style="margin-bottom: 10px; line-height: 1.6;">
+                    📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+                </p>
+                <p style="margin-bottom: 10px;">📧 learnup@ac.id</p>
+                <p style="margin-bottom: 10px;">📞 +62 8428448903<br>📞 +62 9475484959</p>
+                <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 20px;">
+                    <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 14px; border-top: 1px solid #ffffff33; padding-top: 20px;">
+            <span>Terms & Conditions</span>
+            <span>Privacy Policy</span>
+        </div>
+    </footer>
+</body>
+</html>

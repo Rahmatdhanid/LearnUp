@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Pelatihan - Learn Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px; background: #fff;
+    }
+    header nav ul {
+      display: flex; gap: 30px; list-style: none;
+    }
+    header nav ul li a {
+      text-decoration: none; font-weight: 500; font-size: 18px; color: #000;
+    }
+    header nav ul li:nth-child(4) a {
+      font-weight: 700; color: #1E3A5F;
+    }
+    .hero {
+      background: #1E3A5F; color: white; text-align: center; padding: 80px 20px;
+      border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;
+    }
+    .hero h1 { font-size: 42px; margin-bottom: 10px; }
+    .hero p { font-size: 16px; }
+
+    .filter-box {
+      background: #4B648B; padding: 30px; margin: -40px auto 40px;
+      border-radius: 16px; max-width: 1200px; display: flex; gap: 20px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .filter-box input, .filter-box select {
+      padding: 14px; border-radius: 8px; border: none; width: 250px;
+    }
+    .card-grid {
+      max-width: 1200px; margin: 0 auto; display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
+      padding: 0 20px 80px;
+    }
+    .card {
+      background: #4B648B; padding: 24px; border-radius: 16px; color: white;
+      display: flex; flex-direction: column; justify-content: space-between;
+      gap: 16px;
+    }
+    .card h3 { font-size: 20px; }
+    .card p { font-size: 14px; line-height: 1.6; }
+    .btn {
+      padding: 12px; background: white; color: #1E3A5F; font-weight: 600;
+      border: none; border-radius: 8px; cursor: pointer; text-align: center;
+    }
+    footer {
+      background: #4B7DAF; color: white; padding: 60px 20px;
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+      gap: 40px; align-items: flex-start;
+    }
+    .footer-bottom {
+      margin-top: 40px; display: flex; justify-content: space-between;
+      flex-wrap: wrap; font-size: 14px; border-top: 1px solid #ffffff33;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+    </div>
+   <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #888;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #888;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #043362;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+    <div>
+          <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+          </a>
+        </div>
+  </header>
+
+  <section class="hero">
+    <h1>Jadwal Pelatihan</h1>
+    <p>Lihat jadwal pelatihan yang tersedia dan sesuaikan dengan waktumu</p>
+  </section>
+
+  <div class="filter-box">
+    <input type="text" placeholder="Cari nama pelatihan atau Instruktur…">
+    <select>
+      <option>Kategori</option>
+    </select>
+    <input type="date" value="2025-05-25">
+  </div>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+  <div class="card-grid">
+    <div class="card">
+      <h3>Dasar Microsoft Office</h3>
+      <p><strong>Instruktur:</strong> Budi Santoso<br>🖥️ Online<br>📅 12 Juni 2025, 10:00 – 12:00 WIB<br>⏳ 4 Hari</p>
+      <button class="btn">Daftar Sekarang</button>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <h3>Manajemen Keuangan Pribadi & UMKM</h3>
+      <p><strong>Instruktur:</strong> Richard<br>🖥️ Online<br>📅 01 Juni 2025, 13:00 – 15:00 WIB<br>⏳ 3 Hari</p>
+      <button class="btn">Daftar Sekarang</button>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <h3>Desain Grafis Dasar</h3>
+      <p><strong>Instruktur:</strong> Tuti Hartika<br>🖥️ Online<br>📅 06 Juni 2025, 09:00 – 12:00 WIB<br>⏳ 5 Hari</p>
+      <button class="btn">Daftar Sekarang</button>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <h3>Pemrograman Web Dasar</h3>
+      <p><strong>Instruktur:</strong> Rudi Susanto<br>🖥️ Online<br>📅 23 Juni 2025, 14:00 – 16:30 WIB<br>⏳ 5 Hari</p>
+      <button class="btn">Daftar Sekarang</button>
+    </div>
+  </div>
+  </a>
+
+  <footer>
+    <div class="footer-top">
+      <div style="flex: 1 1 400px;">
+        <img src="Learn Up Logo Putih.png" alt="Logo" style="height: 150px; margin-bottom: 20px;">
+        <p style="line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+          At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class,
+          hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step
+          in your career journey.
+        </p>
+        <h4 style="font-weight: 600; margin-bottom: 10px;">Subscribe Our Newsletter</h4>
+        <form style="display: flex; max-width: 400px;">
+          <input type="email" placeholder="Your Email address" style="padding: 12px; border-radius: 8px 0 0 8px; border: none; flex: 1;">
+          <button style="padding: 12px 20px; background: #002D5B; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer;">▶</button>
+        </form>
+      </div>
+
+      <div style="flex: 1 1 250px;">
+        <h3 style="margin-bottom: 20px; font-weight: 700;">Contact <span style="color: #001F3F">Us</span></h3>
+        <p style="margin-bottom: 10px; line-height: 1.6;">
+          📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+        </p>
+        <p style="margin-bottom: 10px;">📧 learnup@ac.id</p>
+        <p style="margin-bottom: 10px;">📞 +62 8428448903<br>📞 +62 9475484959</p>
+        <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 20px;">
+          <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </footer>
+</body>
+</html>

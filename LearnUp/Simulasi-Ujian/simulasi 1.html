@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Ujian Sertifikasi - LearnUp</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333;}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+    }
+    header nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: #000;
+    }
+    footer {
+      background: #4B7DAF;
+      color: white;
+      padding: 60px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* Additional styles for Simulasi Ujian page */
+    .main-content {
+      padding: 40px 60px;
+      min-height: calc(100vh - 200px);
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .page-title h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #4B7DAF;
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .progress-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+
+    .tab {
+      padding: 12px 24px;
+      background: #E8E8E8;
+      color: #666;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tab:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .tab:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+
+    .tab.active {
+      background: #4B7DAF;
+      color: white;
+    }
+
+    .tab::after {
+      content: '▶';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+      font-size: 12px;
+    }
+
+    .tab:last-child::after {
+      display: none;
+    }
+
+    .simulation-container {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .left-panel {
+      flex: 1;
+    }
+
+    .right-panel {
+      flex: 1;
+    }
+
+    .simulation-image {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      background: linear-gradient(135deg, #E8F4FD 0%, #B8D4E8 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 0 auto 30px auto;
+      overflow: hidden;
+    }
+
+    .simulation-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .start-button {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.start-button .start-sim-btn {
+  display: inline-block;
+  background: #4B7DAF;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.start-button .start-sim-btn:hover {
+  background: #3A6B9A;
+}
+
+    .info-panels {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .info-panel {
+      flex: 1;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .info-panel h3 {
+      color: #4B7DAF;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .info-panel ul {
+      list-style: none;
+      line-height: 1.8;
+    }
+
+    .info-panel ul li {
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .info-panel .highlight {
+      color: #4B7DAF;
+      font-weight: 600;
+    }
+
+    .faq-section {
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: #F8F9FA;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .faq-question:hover {
+      background: #E9ECEF;
+    }
+
+    .faq-arrow {
+      font-size: 12px;
+      color: #666;
+      transition: transform 0.3s;
+    }
+
+    .testimonials {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .testimonials h3 {
+      color: #333;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .testimonial-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .testimonial-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #4B7DAF, #6B9BD9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .testimonial-content {
+      flex: 1;
+    }
+
+    .testimonial-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .testimonial-date {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .stars {
+      color: #FFD700;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-text {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-actions {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .testimonial-actions span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .footer-left {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .footer-left img {
+      height: 120px;
+      margin-bottom: 20px;
+    }
+
+    .footer-left p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .newsletter {
+      margin-top: 20px;
+    }
+
+    .newsletter h4 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 350px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 14px;
+    }
+
+    .newsletter-form button {
+      padding: 12px 20px;
+      background: #002D5B;
+      color: white;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .footer-right {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .footer-right h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .contact-info {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .social-icons span {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .social-icons span:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .footer-bottom span {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+    </div>
+    <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #888;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #043362;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+    <div>
+          <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+          </a>
+        </div>
+  </header>
+
+  <main class="main-content">
+    <div class="page-title">
+      <h1>Simulasi Ujian Sertifikasi</h1>
+    </div>
+    <div class="page-subtitle">
+      <p>Latihan soal untuk mempersiapkan ujian sertifikasi</p>
+    </div>
+
+    <div class="progress-tabs">
+      <button class="tab active">Persiapan</button>
+      <button class="tab">Ujian</button>
+      <button class="tab">Hasil</button>
+      <button class="tab">Review</button>
+    </div>
+
+    <div class="simulation-image">
+      <img src="simulation mockup.png" alt="Simulation Mockup">
+    </div>
+
+    <div class="start-button">
+      <a href="../Simulasi-Ujian/simulasi 2.html" class="start-sim-btn">Start Simulation</a>
+    </div>
+
+    <div class="info-panels">
+      <div class="info-panel">
+        <h3>Petunjuk Simulasi</h3>
+        <ul>
+          <li>Waktu pengerjaan: <span class="highlight">60 menit</span></li>
+          <li>Jumlah soal: <span class="highlight">50</span></li>
+          <li>Tipe soal: Pilihan ganda</li>
+          <li>Passing grade: 70%</li>
+          <li></li>
+          <li><span class="highlight">Mulai Ujian →</span></li>
+        </ul>
+      </div>
+
+      <div class="info-panel">
+        <h3>Preview Soal</h3>
+        <ul>
+          <li>Topik: <span class="highlight">IT Fundamental</span></li>
+          <li>1. Fungsi utama dari Microsoft Word adalah untuk...</li>
+          <li>A. Mengelola data keuangan</li>
+          <li>B. Membuat presentasi</li>
+          <li>C. Membuat dan mengedit dokumen teks</li>
+          <li>D. Membuat presentasi visual</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Tips 1: Baca soal dengan seksama</span>
+          <span class="faq-arrow">▽</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Tips 2: Kelola waktu dengan baik</span>
+          <span class="faq-arrow">▽</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Tips 3: Jangan panik, tetap fokus</span>
+          <span class="faq-arrow">▽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <h3>Testimoni Siswa</h3>
+      
+      <div class="testimonial-item">
+        <div class="avatar">BS</div>
+        <div class="testimonial-content">
+          <div class="testimonial-header">
+            <span class="testimonial-name">Budi Setiawan</span>
+            <span class="testimonial-date">2 days ago</span>
+          </div>
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">Sangat membantu persiapan ujian, soalnya mirip dengan yang sebenarnya.</div>
+          <div class="testimonial-actions">
+            <span>👍 10</span>
+            <span>💬 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-item">
+        <div class="avatar">AW</div>
+        <div class="testimonial-content">
+          <div class="testimonial-header">
+            <span class="testimonial-name">Ani Wijaya</span>
+            <span class="testimonial-date">3 days ago</span>
+          </div>
+          <div class="stars">★★★★☆</div>
+          <div class="testimonial-text">Waktu pengerjaan cukup, tidak terlalu terburu-buru.</div>
+          <div class="testimonial-actions">
+            <span>👍 8</span>
+            <span>💬 1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-item">
+        <div class="avatar">JS</div>
+        <div class="testimonial-content">
+          <div class="testimonial-header">
+            <span class="testimonial-name">Joko Susilo</span>
+            <span class="testimonial-date">4 days ago</span>
+          </div>
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">Antarmuka user-friendly, mudah dipahami.</div>
+          <div class="testimonial-actions">
+            <span>👍 12</span>
+            <span>💬 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="Learn Up Logo Putih.png" alt="Logo">
+        <p>At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class, hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step in your career journey.</p>
+        
+        <div class="newsletter">
+          <h4>Subscribe Our Newsletter</h4>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your Email address">
+            <button>▶</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h3>Contact <span style="color: #001F3F;">Us</span></h3>
+        <div class="contact-info">
+          <p>📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
+          <p>📧 learnup@ac.id</p>
+          <p>📞 +62 8428448903<br>📞 +62 9475484959</p>
+        </div>
+        <div class="social-icons">
+          <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </footer>
+</body>
+</html>

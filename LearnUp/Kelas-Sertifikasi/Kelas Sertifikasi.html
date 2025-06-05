@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelas Sertifikasi - Learn Up</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333;}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+    }
+    header nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: #000;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-outline {border: 2px solid #043362; background: #fff; color: #043362;}
+    .btn-primary {background: #043362; color: #fff; border: none;}
+
+    .page-title {
+      text-align: center;
+      margin: 50px 0 20px;
+      font-size: 36px;
+      font-weight: 700;
+      color: #405391;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .search-box {
+      background: #F1F1F5;
+      padding: 12px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+    }
+
+    .tabs div {
+      padding: 10px 24px;
+      background: #fff;
+      border-radius: 10px;
+      font-weight: 500;
+      color: #444;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+
+    .tabs .active {
+      background: #043362;
+      color: white;
+      border: 1px solid #043362;
+    }
+
+    .sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sort select {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #F1F1F5;
+    }
+
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px 60px;
+      background: #F3F3F3;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    .course-card img {
+      background: #435C74;
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .course-title {
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: #171725;
+      margin: 15px 10px 10px;
+    }
+
+    .course-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .course-buttons button {
+      padding: 8px 12px;
+      font-size: 12px;
+      border-radius: 6px;
+      border: 1px solid #182C40;
+      background: #fff;
+      color: #182C40;
+      cursor: pointer;
+    }
+
+    .course-buttons .enroll {
+      background: #182C40;
+      color: #fff;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .pagination button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #4B7DAF;
+      color: white;
+      padding: 60px 80px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-top img {
+      height: 150px;
+    }
+
+    .footer-top p {
+      max-width: 400px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .footer-newsletter input {
+      padding: 12px;
+      border-radius: 8px 0 0 8px;
+      border: none;
+      width: 200px;
+    }
+
+    .footer-newsletter button {
+      padding: 12px 16px;
+      border: none;
+      background: #002D5B;
+      color: white;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .contact-info {
+      max-width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <header style="background: #fff; padding: 20px 60px; display: flex; align-items: center; justify-content: space-between;">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+  </div>
+  <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #043362;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #888;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+  <div>
+          <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+          </a>
+        </div>
+</header>
+
+  <div class="page-title">Courses List</div>
+
+  <div class="filters">
+    <div class="search-box">
+      🔍 <input type="text" placeholder="Search The Course Here">
+    </div>
+    <div class="tabs">
+      <div>All</div>
+      <div class="active">Opened</div>
+      <div>Coming Soon</div>
+      <div>Archived</div>
+    </div>
+    <div class="sort">
+      <label for="sort">Sort by:</label>
+      <select id="sort">
+        <option>Popular Class</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="courses-container">
+    <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 1.png" alt="Course Image" />
+      <div class="course-title">Dasar Microsoft Office</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 2.png" alt="Course Image" />
+      <div class="course-title">Persiapan Sertifikasi TOEIC / TOEFL Dasar</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 3.png" alt="Course Image" />
+      <div class="course-title">Pelatihan Mikrotik</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 4.png" alt="Course Image" />
+      <div class="course-title">Manajemen Keuangan Pribadi & UMKM</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 5.png" alt="Course Image" />
+      <div class="course-title">Desain Grafis Dasar</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 6.png" alt="Course Image" />
+      <div class="course-title">Pemrograman Web Dasar</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 7.png" alt="Course Image" />
+      <div class="course-title">Pengenalan Digital Marketing & Media Sosial</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 8.png" alt="Course Image" />
+      <div class="course-title">Soft Skills & Etika Dunia Kerja</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 9.png" alt="Course Image" />
+      <div class="course-title">Komunikasi Efektif di Tempat Kerja</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 10.png" alt="Course Image" />
+      <div class="course-title">Public Speaking & Presentasi Profesional</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 11.png" alt="Course Image" />
+      <div class="course-title">Pengelolaan Waktu & Produktivitas Pribadi</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 12.png" alt="Course Image" />
+      <div class="course-title">Layanan Pelanggan Digital</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 13.png" alt="Course Image" />
+      <div class="course-title">Teknik Wawancara & Pembuatan CV</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 14.png" alt="Course Image" />
+      <div class="course-title">Manajemen Media Sosial untuk UMKM</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 15.png" alt="Course Image" />
+      <div class="course-title">Keamanan Digital Dasar (Cyber Hygiene)</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 16.png" alt="Course Image" />
+      <div class="course-title">Etika & Profesionalisme dalam Dunia Kerja</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 17.png" alt="Course Image" />
+      <div class="course-title">Pemanfaatan Google Workspace</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 18.png" alt="Course Image" />
+      <div class="course-title">Penggunaan Canva untuk Presentasi & Konten</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 19.png" alt="Course Image" />
+      <div class="course-title">Customer Service Excellence untuk UMKM</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+
+  <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+    <div class="course-card">
+      <img src="icon 20.png" alt="Course Image" />
+      <div class="course-title">Pengenalan Project Managemen Dasar</div>
+      <div class="course-buttons">
+        <button>Live Demo</button>
+        <button class="enroll">Enroll Now</button>
+        <button>Download Curriculum</button>
+      </div>
+    </div>
+  </a>
+  </div>
+
+  <div class="pagination">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <img src="Learn Up Logo Putih.png" alt="Learn Up Logo">
+        <p>At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class, hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step in your career journey.</p>
+        <div class="footer-newsletter">
+          <label>Subscribe Our Newsletter</label><br/>
+          <input type="email" placeholder="Your Email address">
+          <button>▶</button>
+        </div>
+      </div>
+      <div class="contact-info">
+        <h3>Contact <span style="color:#001F3F">Us</span></h3>
+        <p>📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
+        <p>📧 learnup@ac.id</p>
+        <p>📞 +62 8428448903<br>📞 +62 9475484959</p>
+        <p>🌐 🐦 📸 💼 ▶</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </footer>
+</body>
+</html>

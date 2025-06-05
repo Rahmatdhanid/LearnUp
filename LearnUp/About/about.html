@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About LearnUp</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333;}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+    }
+    header nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: #000;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-outline {border: 2px solid #043362; background: #fff; color: #043362;}
+    .btn-primary {background: #043362; color: #fff; border: none;}
+
+    .about-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 100px 60px 60px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .about-text {
+      max-width: 600px;
+    }
+    .about-text h2 {
+      font-size: 40px;
+      letter-spacing: 10px;
+      font-weight: 150;
+      margin-bottom: 10px;
+    }
+    .about-text h1 {
+      font-size: 50px;
+      color: #4B7DAF;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-size: 18px;
+      color: #575757;
+      line-height: 1.6;
+    }
+    .about-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .about-images img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+    }
+    .features {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .features-text {
+      max-width: 700px;
+    }
+    .features-text ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #575757;
+    }
+    .features-image img {
+      width: 300px;
+      height: auto;
+      border-radius: 50%;
+    }
+    .contact-section {
+      background: #4B7DAF;
+      padding: 80px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .contact-section h2 {
+      font-size: 60px;
+      font-weight: 700;
+    }
+    .contacts {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 40px 60px 80px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      text-align: center;
+      color: #3B4C68;
+    }
+    .contact-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .contact-card h4 {
+      margin-top: 10px;
+      font-weight: 700;
+    }
+    .contact-card p {
+      opacity: 0.7;
+    }
+    footer {
+      background: #4B7DAF;
+      color: white;
+      padding: 60px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .footer-logo {
+      flex: 1 1 300px;
+    }
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 16px;
+    }
+    .footer-logo p {
+      line-height: 1.6;
+    }
+    .newsletter {
+      flex: 1 1 300px;
+    }
+    .newsletter input {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      width: 70%;
+      margin-top: 8px;
+    }
+    .newsletter button {
+      padding: 12px 20px;
+      margin-top: 8px;
+      background: #043362;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .footer-col {
+      flex: 1 1 300px;
+    }
+    .footer-col h4 {
+      margin-bottom: 10px;
+    }
+    .footer-col p {
+      line-height: 1.6;
+    }
+    .footer-bottom {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header style="background: #fff; padding: 20px 60px; display: flex; align-items: center; justify-content: space-between;">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+  </div>
+  <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #888;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #888;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #888;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #043362;">Tentang</a></li>
+  </ul>
+</nav>
+  <div>
+    <a href="../Profile/Profile.html">
+      <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+    </a>
+  </div>
+</header>
+
+  <section class="about-section">
+    <div class="about-text">
+      <h2>ABOUT US</h2>
+      <h1>Portal Pelatihan Sertifikasi Gratis untuk Siswa SMK</h1>
+      <p>Merupakan sebuah platform digital berbasis aplikasi yang dirancang khusus untuk memberikan akses mudah, cepat, dan gratis bagi siswa Sekolah Menengah Kejuruan (SMK) dalam mengikuti berbagai pelatihan dan program sertifikasi sesuai dengan kompetensi keahlian mereka.</p>
+    </div>
+    <div class="about-images" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: auto auto; gap: 20px; position: relative;">
+  <img src="Group1.png" alt="img1" style="width: 140px; height: auto; border-radius: 20px; grid-column: 1; grid-row: 1;">
+  <img src="Group2.png" alt="img2" style="width: 220px; height: auto; border-radius: 20px; grid-column: 2; grid-row: 1;">
+  <img src="Group3.png" alt="img3" style="width: 100%; max-width: 370px; height: auto; border-radius: 20px; grid-column: 1 / span 2; grid-row: 2;">
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-image">
+      <img src="Group4.png" alt="feature-img">
+    </div>
+    <div class="features-text">
+      <ul>
+        <li>Materi pelatihan online yang interaktif dan relevan dengan kebutuhan industri</li>
+        <li>Sertifikasi kompetensi yang dapat meningkatkan nilai jual siswa di dunia kerja</li>
+        <li>Akses tanpa biaya sebagai bentuk dukungan terhadap pemerataan kualitas pendidikan vokasi</li>
+        <li>Jadwal pelatihan yang fleksibel, bisa diikuti secara mandiri sesuai waktu siswa</li>
+        <li>Sistem monitoring dan evaluasi agar guru dan sekolah dapat memantau perkembangan siswa</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Our Contact</h2>
+  </section>
+  <div class="contacts">
+    <div class="contact-card">
+      <img src="prasad.png" alt="Prasad">
+      <h4>PRASAD</h4>
+      <p>+62 82178943320</p>
+    </div>
+    <div class="contact-card">
+      <img src="anand.png" alt="Anand">
+      <h4>ANAND KUMAR</h4>
+      <p>+62 81278455634</p>
+    </div>
+    <div class="contact-card">
+      <img src="chitra.png" alt="Chitra">
+      <h4>CHITRA</h4>
+      <p>+62 82165678142</p>
+    </div>
+  </div>
+
+  <footer style="background: #4B7DAF; color: white; padding: 60px 80px; border-radius: 20px 20px 0 0;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 40px;">
+    <div style="flex: 1 1 400px;">
+      <img src="Learn Up Logo Putih.png" alt="Logo" style="height: 150px; margin-bottom: 20px;">
+      <p style="line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+        At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class,
+        hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step
+        in your career journey.
+      </p>
+      <h4 style="font-weight: 600; margin-bottom: 10px;">Subscribe Our Newsletter</h4>
+      <form style="display: flex; max-width: 400px;">
+        <input type="email" placeholder="Your Email address" style="padding: 12px; border-radius: 8px 0 0 8px; border: none; flex: 1;">
+        <button style="padding: 12px 20px; background: #002D5B; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer;">▶</button>
+      </form>
+    </div>
+
+    <div style="flex: 1 1 250px;">
+      <h3 style="margin-bottom: 20px; font-weight: 700;">Contact <span style="color: #001F3F">Us</span></h3>
+      <p style="margin-bottom: 10px; line-height: 1.6;">
+        📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+      </p>
+      <p style="margin-bottom: 10px;">📧 learnup@ac.id</p>
+      <p style="margin-bottom: 10px;">📞 +62 8428448903<br>📞 +62 9475484959</p>
+      <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 20px;">
+        <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 14px; border-top: 1px solid #ffffff33; padding-top: 20px;">
+    <span>Terms & Conditions</span>
+    <span>Privacy Policy</span>
+  </div>
+</footer>
+</body>
+</html>

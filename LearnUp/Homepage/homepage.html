@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnUp - Skill Your Way Up To Success</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #FDFDFD; color: #333;}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+    }
+    header nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: #000;
+    }
+    footer {
+      background: #4B7DAF;
+      color: white;
+      padding: 60px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      padding: 80px 60px;
+      gap: 80px;
+      background: #FDFDFD;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1E3A5F;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .search-container {
+      display: flex;
+      max-width: 500px;
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .search-container input {
+      flex: 1;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 16px;
+      outline: none;
+    }
+    .search-container button {
+      padding: 15px 25px;
+      background: #4B7DAF;
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      padding: 8px 16px;
+      background: #E8F0FE;
+      color: #4B7DAF;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .hero-image {
+      flex: 1;
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+    .hero-circle {
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 100%);
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto;
+    }
+    .hero-person {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 400px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 400"><rect width="350" height="400" fill="%23transparent"/><circle cx="175" cy="120" r="40" fill="%23F4C2A1"/><rect x="135" y="160" width="80" height="100" rx="10" fill="%23333"/><rect x="125" y="260" width="100" height="80" rx="5" fill="%234169E1"/><rect x="140" y="340" width="70" height="60" rx="35" fill="%23F4C2A1"/></svg>') no-repeat center;
+      background-size: contain;
+    }
+
+    /* Platform Section */
+    .platform {
+      padding: 80px 60px;
+      background: #ffffff;
+    }
+    .platform-container {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+    .platform-content {
+      flex: 1;
+      
+    }
+    .platform h2 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #1E3A5F;
+      margin-bottom: 30px;
+    }
+    .platform-image {
+      flex: 1;
+      position: relative;
+    }
+    
+    .certification-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1E3A5F;
+      margin-bottom: 10px;
+    }
+    .certification-subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .certification-highlight {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FF6B35;
+    }
+    .certification-icon {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      border-radius: 15px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero, .platform-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .platform h2 {
+        font-size: 32px;
+      }
+      header {
+        padding: 20px 30px;
+      }
+      .hero, .platform {
+        padding: 60px 30px;
+      }
+    }
+
+    /* Who Can Join Section */
+    .who-can-join {
+      padding: 80px 60px;
+      background: #FDFDFD;
+    }
+    .who-can-join-container {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .who-content {
+      flex: 1;
+    }
+    .who-subtitle {
+      font-size: 14px;
+      color: #999;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .who-content h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #1E3A5F;
+      margin-bottom: 40px;
+      line-height: 1.3;
+    }
+    .students-section {
+      text-align: center;
+    }
+    .students-section h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1E3A5F;
+    }
+    .who-image {
+      flex: 1;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      padding: 80px 60px;
+      background: #1E3A5F;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .how-it-works-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .how-it-works h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      background: #2E4A6F;
+      padding: 15px 40px;
+      border-radius: 25px;
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .workflow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .workflow-step {
+      text-align: center;
+      color: white;
+    }
+    .workflow-step p {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .workflow-steps {
+      display: flex;
+      gap: 30px;
+      flex: 1;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .step {
+      text-align: center;
+      color: white;
+    }
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: #4B7DAF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 10px;
+    }
+    .step p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+
+    /* Responsive for new sections */
+    @media (max-width: 768px) {
+      .who-can-join-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .who-content h2 {
+        font-size: 32px;
+      }
+      .workflow {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .workflow-steps {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .how-it-works, .who-can-join {
+        padding: 60px 30px;
+      }
+    }
+
+    /* Popular Courses Section */
+    .popular-courses {
+      padding: 80px 60px;
+      background: #FDFDFD;
+    }
+    .popular-courses-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .popular-courses h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #6B8CAE;
+      margin-bottom: 50px;
+    }
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+    .course-image {
+      width: 100%;
+      height: 120px;
+      position: relative;
+    }
+    .course-content {
+      padding: 20px;
+    }
+    .course-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1E3A5F;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      min-height: 45px;
+    }
+    .course-tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .course-tags span {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .tag-beginner {
+      background: #E8F5E8;
+      color: #2E7D32;
+    }
+    .tag-live {
+      background: #E3F2FD;
+      color: #1976D2;
+    }
+    .tag-free {
+      background: #F3E5F5;
+      color: #7B1FA2;
+    }
+    .tag-paid {
+      background: #FFF3E0;
+      color: #F57C00;
+    }
+    .download-btn {
+      width: 100%;
+      padding: 10px;
+      background: #1E3A5F;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #2E4A6F;
+    }
+    .view-all-container {
+      text-align: center;
+    }
+    .view-all-btn {
+      padding: 15px 40px;
+      background: #1E3A5F;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .view-all-btn:hover {
+      background: #2E4A6F;
+    }
+
+    /* Responsive for Popular Courses */
+    @media (max-width: 1024px) {
+      .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .popular-courses {
+        padding: 60px 30px;
+      }
+    }
+    @media (max-width: 480px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Responsive for Popular Courses */
+    @media (max-width: 1024px) {
+      .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .popular-courses {
+        padding: 60px 30px;
+      }
+    }
+    @media (max-width: 480px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Our Achievements Section */
+    .achievements {
+      padding: 80px 60px;
+      background: linear-gradient(135deg, #6B8CAE 0%, #4A6B8A 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .achievements::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="90" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="85" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+      pointer-events: none;
+    }
+    .achievements-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+    }
+    .achievements-content {
+      flex: 1;
+    }
+    .achievements h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+    .achievements h2 span {
+      color: #1E3A5F;
+    }
+    .achievements-illustration {
+      flex: 1;
+      position: relative;
+      min-height: 300px;
+    }
+    .illustration-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(45deg, #4A6B8A 0%, #5B7A9A 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-figures {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+    .figure {
+      width: 60px;
+      height: 80px;
+      background: #1E3A5F;
+      border-radius: 30px 30px 10px 10px;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+    .figure::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 25px;
+      background: #F4C2A1;
+      border-radius: 50%;
+    }
+    .figure.winner {
+      background: #FF6B35;
+      height: 100px;
+      animation-delay: -1s;
+    }
+    .figure.second {
+      animation-delay: -2s;
+    }
+    .mountain-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, #3A5A7A 0%, transparent 100%);
+      clip-path: polygon(0 100%, 20% 60%, 40% 80%, 60% 40%, 80% 70%, 100% 50%, 100% 100%);
+    }
+    .achievement-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .achievement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .achievement-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1E3A5F;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .achievement-text {
+      color: #666;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .achievement-icon {
+      width: 24px;
+      height: 24px;
+      opacity: 0.7;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .percentage-card {
+      grid-column: span 3;
+      background: white;
+      border-radius: 20px;
+      padding: 25px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .percentage-card:hover {
+      transform: translateY(-5px);
+    }
+    .percentage-number {
+      font-size: 64px;
+      font-weight: 700;
+      color: #1E3A5F;
+      line-height: 1;
+    }
+    .percentage-text {
+      color: #666;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Responsive for Achievements */
+    @media (max-width: 768px) {
+      .achievements-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+      }
+      .achievements h2 {
+        font-size: 36px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .percentage-card {
+        grid-column: span 2;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      .percentage-number {
+        font-size: 48px;
+      }
+      .achievements {
+        padding: 60px 30px;
+      }
+    }
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .percentage-card {
+        grid-column: span 1;
+      }
+    }
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+          background: #FDFDFD;
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 80px;
+            background: white;
+            border-radius: 0;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .title .first-line {
+            color: #6b7d9d;
+        }
+
+        .title .second-line {
+            color: #2c3e50;
+        }
+
+        .mentors-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            position: relative;
+        }
+
+        /* Large decorative G */
+        .large-g {
+            font-size: 25rem;
+            font-weight: 900;
+            color: rgba(107, 125, 157, 0.1);
+            position: absolute;
+            left: -80px;
+            top: -100px;
+            z-index: 0;
+            line-height: 1;
+        }
+
+        .mentor-card {
+            background: white;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .best-trainer-badge {
+            background: #2c3e50;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 25px;
+        }
+
+        .trophy-icon {
+            color: #ffd700;
+            font-size: 0.8rem;
+        }
+
+        .mentor-profile {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .mentor-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #e8ecf3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .avatar-face {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-face::before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: #2c3e50;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+        }
+
+        .avatar-face::after {
+            content: '';
+            width: 20px;
+            height: 15px;
+            background-color: #2c3e50;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: 8px;
+        }
+
+        .mentor-info h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .mentor-speciality {
+            color: #6b7d9d;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
+        .star.empty {
+            color: #e5e5e5;
+        }
+
+        .reviews {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .stat-icon {
+            width: 16px;
+            height: 16px;
+            background: #6b7d9d;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.6rem;
+        }
+
+        .mentor-description {
+            color: #555;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            text-align: justify;
+        }
+
+        /* Second mentor card positioning */
+        .mentor-card:nth-child(3) {
+            margin-left: auto;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .mentors-section {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .large-g {
+                font-size: 15rem;
+                left: -40px;
+                top: -60px;
+            }
+
+            .mentor-card:nth-child(3) {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FDFDFD;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #6B7280;
+            margin-bottom: 60px;
+        }
+
+        /* Certifications Section */
+        .certifications-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .certification-badge {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            border: 8px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .certification-badge.purple {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+        }
+
+        .certification-badge.blue {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+        }
+
+        .certification-badge.green {
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .certification-badge.pink {
+            background: linear-gradient(135deg, #EC4899, #DB2777);
+        }
+
+        .cert-text-top {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .cert-iso {
+            font-size: 14px;
+            font-weight: 900;
+            margin-bottom: 2px;
+        }
+
+        .cert-number {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .cert-text-bottom {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .checkmark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Collaborations Section */
+        .collaborations-section {
+            position: relative;
+        }
+
+        .collaborations-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .collaboration-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+        }
+
+        /* Tokopedia Academy */
+        .tokopedia {
+            font-size: 18px;
+            font-weight: 700;
+            color: #42B883;
+        }
+
+        /* Paragon Corp */
+        .paragon {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2563EB;
+            display: flex;
+            align-items: center;
+        }
+
+        .paragon-logo {
+            width: 40px;
+            height: 40px;
+            background: #2563EB;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Digital Talent */
+        .digital-talent {
+            font-size: 16px;
+            font-weight: 700;
+            color: #3B82F6;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .digital-logo {
+            width: 40px;
+            height: 40px;
+            background: #3B82F6;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        /* Microsoft */
+        .microsoft {
+            font-size: 18px;
+            font-weight: 700;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .microsoft-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .microsoft-square {
+            width: 18px;
+            height: 18px;
+        }
+
+        .microsoft-square:nth-child(1) { background-color: #F25022; }
+        .microsoft-square:nth-child(2) { background-color: #7FBA00; }
+        .microsoft-square:nth-child(3) { background-color: #00A4EF; }
+        .microsoft-square:nth-child(4) { background-color: #FFB900; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .certifications-container {
+                gap: 20px;
+            }
+            
+            .certification-badge {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .collaborations-container {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certifications-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .collaborations-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+  </style>
+</head>
+<body>
+  <header>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="Learn Up logo.png" alt="Logo" style="height: 80px;">
+        </div>
+    <nav>
+  <ul>
+    <li><a href="../Homepage/homepage.html" style="text-decoration: none; font-weight: 600; color: #043362;">Home</a></li>
+    <li><a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" style="text-decoration: none; font-weight: 600; color: #888;">Kelas Sertifikasi</a></li>
+    <li><a href="../Simulasi-Ujian/simulasi 1.html" style="text-decoration: none; font-weight: 600; color: #888;">Simulasi Ujian</a></li>
+    <li><a href="../Jadwal-Pelatihan/jadwal pelatihan.html" style="text-decoration: none; font-weight: 600; color: #888;">Jadwal</a></li>
+    <li><a href="../About/about.html" style="text-decoration: none; color: #888;">Tentang</a></li>
+  </ul>
+</nav>
+        <div>
+          <a href="../Profile/Profile.html">
+            <img src="Logo Profile.png" alt="Profile" style="cursor:pointer;">
+          </a>
+        </div>
+    </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Skill Your Way Up To Success With Us</h1>
+        <p>Get the skills you need for the future of work.</p>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search the course you want">
+          <button>Cari</button>
+        </div>
+        
+        <div class="tags">
+          <span class="tag">Desain Grafis</span>
+          <span class="tag">Soft Skills</span>
+          <span class="tag">Milenial</span>
+          <span class="tag">UMKM</span>
+          <span class="tag">Microsoft</span>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+      <!-- GAMBAR HERO (ORANG DENGAN LAPTOP DALAM LINGKARAN) DISINI -->
+      <div style="width: 500px; height: 500px; border-radius: 50%; margin: 0 auto; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <img src="hp 1.png" alt="Gambar Hero" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="platform">
+      <div class="platform-container">
+        <div class="platform-content">
+          <h2>Platform Pelatihan Sertifikasi Berbasis Digital</h2>
+        </div>
+        
+        <div class="platform-image">
+          <div class="certification-card">
+            <!-- GAMBAR ICON SERTIFIKASI DISINI -->
+            <div style="width: 600px; height: 270px; background: #f5f5f5; border-radius: 15px; margin: 20px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; text-align: center; ">
+              <img src="hp 2.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+              <div style="width: 30px; height: 30px; background: #FF6B35; border-radius: 5px;"></div>
+              <div style="width: 30px; height: 30px; background: #4B7DAF; border-radius: 5px;"></div>
+              <div style="width: 30px; height: 30px; background: #F7931E; border-radius: 5px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Who Can Join Section -->
+    <section class="who-can-join">
+      <div class="who-can-join-container">
+        <div class="who-content">
+          <p class="who-subtitle">WHO CAN JOIN</p>
+          <h2>Skill Development Schemes For</h2>
+          <div class="students-section">
+            <!-- GAMBAR ICON BUILDING/KAMPUS DISINI -->
+            <div style="width: 80px; height: 80px; background: #f5f5f5; border-radius: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; text-align: center;">
+              <img src="hp 3.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3>Students</h3>
+          </div>
+        </div>
+        <div class="who-image">
+          <!-- GAMBAR ILUSTRASI PEMBELAJARAN ONLINE DISINI -->
+          <div style="width: 350px; height: 300px; background: #f9f9f9; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 16px; text-align: center;">
+            <img src="hp 4.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="how-it-works-container">
+        <h2>How It Works</h2>
+        <div class="workflow">
+          <div class="workflow-step start">
+            <!-- GAMBAR JOB SEEKER DISINI -->
+            <div style="width: 120px; height: 100px; background: #f5f5f5; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 10px; text-align: center;">
+              <img src="hp 5.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p>Job Seeker</p>
+          </div>
+          
+          <div class="workflow-steps">
+            <div class="step">
+              <div class="step-number">01</div>
+              <!-- GAMBAR ASSESSMENT ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 7.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Assessment<br>Aptitude Test<br>Interview</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">02</div>
+              <!-- GAMBAR HANDS-ON ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 8.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Hands on<br>Practice<br>Scenarios,<br>Test Cases</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">03</div>
+              <!-- GAMBAR SOFT SKILLS ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 9.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Soft Skills &<br>Business<br>Training</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">04</div>
+              <!-- GAMBAR DAILY ASSESSMENT ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 10.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Daily, Weekly,<br>Monthly<br>Assessments</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">05</div>
+              <!-- GAMBAR REAL TIME PROJECT ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 11.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Real Time<br>Project<br>Hackathons</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">06</div>
+              <!-- GAMBAR ASSESSMENT GUIDANCE ICON DISINI -->
+              <div style="width: 65px; height: 65px; background: #1E3A5F; border-radius: 8px; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: #999; font-size: 8px; text-align: center;">
+                <img src="hp 12.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p>Assessment<br>Guidance<br>& Monitoring</p>
+            </div>
+          </div>
+          
+          <div class="workflow-step end">
+            <!-- GAMBAR EMPLOYED DISINI -->
+            <div style="width: 120px; height: 100px; background: #f5f5f5; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 10px; text-align: center;">
+              <img src="hp 6.png" alt="Gambar Platform" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p>Employed</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="popular-courses">
+      <div class="popular-courses-container">
+        <h2>Popular Courses</h2>
+        
+        <div class="courses-grid">
+          <!-- Row 1 -->
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR MICROSOFT OFFICE ICONS DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 1.png" alt="Microsoft Office" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Dasar Microsoft Office</h3>
+              <div class="course-tags">
+                <span class="tag-beginner">Beginner</span>
+                <span class="tag-free">Free Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+        
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR SERTIFIKASI TOEIC/TOEFL DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 2.png" alt="Microsoft Office" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Persiapan Sertifikasi TOEIC / TOEFL Dasar</h3>
+              <div class="course-tags">
+                <span class="tag-beginner">Beginner</span>
+                <span class="tag-free">Free Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR MIKROTIK ROUTER DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 3.png" alt="Pelatihan Mikrotik" style="width: 50%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Pelatihan Mikrotik</h3>
+              <div class="course-tags">
+                <span class="tag-beginner">Beginner</span>
+                <span class="tag-free">Free Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR MANAJEMEN KEUANGAN DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 4.png" alt="Manajemen Keuangan" style="width: 50%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Manajemen Keuangan Pribadi & UMKM</h3>
+              <div class="course-tags">
+                <span class="tag-beginner">Beginner</span>
+                <span class="tag-free">Free Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+
+          <!-- Row 2 -->
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR DESAIN GRAFIS DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 5.png" alt="Desain Grafis" style="width: 60%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Desain Grafis Dasar</h3>
+              <div class="course-tags">
+                <span class="tag-live">Live Online</span>
+                <span class="tag-free">Free Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR PEMROGRAMAN WEB DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 6.png" alt="Pemrograman Web" style="width: 60%; height: 90%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Pemrograman Web Dasar</h3>
+              <div class="course-tags">
+                <span class="tag-live">Live Online</span>
+                <span class="tag-paid">Paid Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR DIGITAL MARKETING DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 7.png" alt="Pengenalan Digital Marketing" style="width: 50%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Pengenalan Digital Marketing dan Media Sosial</h3>
+              <div class="course-tags">
+                <span class="tag-live">Live Online</span>
+                <span class="tag-paid">Paid Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="../Detail-Kelas/detail.html" style="text-decoration: none; color: inherit;">
+          <div class="course-card">
+            <!-- GAMBAR SOFT SKILLS DISINI -->
+            <div class="course-image">
+              <div style="width: 100%; height: 120px; background: #6B8CAE; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; text-align: center; border: 2px dashed #ffffff50;">
+                <img src="icon 8.png" alt="Soft Skills" style="width: 50%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Soft Skills & Etika Dunia Kerja</h3>
+              <div class="course-tags">
+                <span class="tag-live">Live Online</span>
+                <span class="tag-paid">Paid Online</span>
+              </div>
+              <button class="download-btn">
+                <span>📥</span> Download
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+        <div class="view-all-container">
+          <a href="../Kelas-Sertifikasi/Kelas Sertifikasi.html" class="view-all-btn" style="text-decoration: none; display: inline-block;">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Achievements Section -->
+<section class="achievements">
+  <div class="achievements-container">
+    <div class="achievements-content">
+      <h2>Our <span>Achievements</span></h2>
+      
+      <div class="stats-grid">
+        <div class="achievement-card">
+          <div class="achievement-number">100</div>
+          <div class="achievement-text">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            Students Trained
+          </div>
+        </div>
+        
+        <div class="achievement-card">
+          <div class="achievement-number">50</div>
+          <div class="achievement-text">
+            <svg class="achievement-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            Courses Available
+          </div>
+        </div>
+        
+        <div class="percentage-card">
+          <div class="percentage-number">70%</div>
+          <div class="percentage-text">
+            Students Secured Jobs<br>
+            in Level 1 Companies
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="achievements-illustration">
+      <div class="illustration-container">
+        <div class="mountain-bg"></div>
+        <div class="team-figures">
+          <img src="hp 13.png" alt="Team Figures">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+        <h1 class="title">
+            <div class="first-line">Meet Our Professional</div>
+            <div class="second-line">Mentors & Trainers</div>
+        </h1>
+
+        <div class="mentors-section">
+            <div class="large-g">G</div>
+            
+            <!-- Zayn Malik Card -->
+            <div class="mentor-card">
+                <div class="best-trainer-badge">
+                    <span class="trophy-icon">🏆</span>
+                    BEST TRAINER
+                </div>
+                
+                <div class="mentor-profile">
+                    <div class="mentor-avatar">
+                        <div class="avatar-face"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h2>Zayn Malik</h2>
+                        <div class="mentor-speciality">Net & Azure</div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="reviews">72 Reviews</span>
+                        </div>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-icon">📚</div>
+                                <span>39 Modules</span>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-icon">👥</div>
+                                <span>375 Students</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mentor-description">
+                    Zayn is a Software Developer who expertised in NET & Azure for more than 24 years and training 100's of students to accomplish their goals & dreams.
+                </div>
+            </div>
+
+            <!-- Sudhansu Card -->
+            <div class="mentor-card">
+                <div class="mentor-profile">
+                    <div class="mentor-avatar">
+                        <div class="avatar-face"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h2>Sudhansu</h2>
+                        <div class="mentor-speciality">Cloud & Cyber Security, Forensic</div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="reviews">38 Reviews</span>
+                        </div>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-icon">📚</div>
+                                <span>27 Modules</span>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-icon">👥</div>
+                                <span>169 Students</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mentor-description">
+                    Sudhansu is a Software Developer who expertised in Cloud security, Cyber Security, Data Center & Forensic for more than 22 years and training 100's of students to accomplish their goals & dreams.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2 class="section-title">Our Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification-badge purple">
+                    <div class="cert-text-top">Information Security Management</div>
+                    <div class="cert-iso">ISO</div>
+                    <div class="cert-number">27001</div>
+                    <div class="cert-text-bottom">Certified</div>
+                    <div class="checkmark">✓</div>
+                </div>
+                
+                <div class="certification-badge blue">
+                    <div class="cert-text-top">Quality Management</div>
+                    <div class="cert-iso">ISO</div>
+                    <div class="cert-number">9001</div>
+                    <div class="cert-text-bottom">Certified</div>
+                    <div class="checkmark">✓</div>
+                </div>
+                
+                <div class="certification-badge green">
+                    <div class="cert-text-top">Service Management</div>
+                    <div class="cert-iso">ISO</div>
+                    <div class="cert-number">20000-1</div>
+                    <div class="cert-text-bottom">Certified</div>
+                    <div class="checkmark">✓</div>
+                </div>
+                
+                <div class="certification-badge pink">
+                    <div class="cert-text-top">Learning Services</div>
+                    <div class="cert-iso">ISO</div>
+                    <div class="cert-number">29993</div>
+                    <div class="cert-text-bottom">Certified</div>
+                    <div class="checkmark">✓</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collaborations Section -->
+        <div class="section collaborations-section">  
+            <h2 class="section-title">Our Collaborations</h2>
+            <div class="collaborations-container">
+                <div class="collaboration-item">
+                    <img src="hp 14.png" alt="Tokopedia Academy" class="logo-img">
+                </div>
+                
+                <div class="collaboration-item">
+                    <div class="paragon">
+                        <img src="hp 15.png" alt="Paragon" class="logo-img">
+                </div>
+                
+                <div class="collaboration-item">
+                    <div class="digital-talent">
+                        <img src="hp 16.png" alt="Digital talent" class="logo-img">
+                    </div>
+                </div>
+                
+                <div class="collaboration-item">
+                    <div class="microsoft">
+                        <img src="hp 17.png" alt="Microsoft" class="logo-img"> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  </main>
+
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 40px;">
+      <div style="flex: 1 1 400px;">
+        <!-- GAMBAR LOGO LEARNUP PUTIH DISINI -->
+        <div style="width: 150px; height: 60px; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; text-align: center;">
+          <img src="Learn Up Logo Putih.png" alt="Learn Up Logo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <p style="line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+          At Learn Up, we believe that everyone has the potential to achieve greatness. Through our world-class,
+          hands-on training programs, we help you unlock your skills, grow with confidence, and take the next step
+          in your career journey.
+        </p>
+        <h4 style="font-weight: 600; margin-bottom: 10px;">Subscribe Our Newsletter</h4>
+        <form style="display: flex; max-width: 400px;">
+          <input type="email" placeholder="Your Email address" style="padding: 12px; border-radius: 8px 0 0 8px; border: none; flex: 1;">
+          <button style="padding: 12px 20px; background: #002D5B; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer;">▶</button>
+        </form>
+      </div>
+
+      <div style="flex: 1 1 250px;">
+        <h3 style="margin-bottom: 20px; font-weight: 700;">Contact <span style="color: #E8F0FE">Us</span></h3>
+        <p style="margin-bottom: 10px; line-height: 1.6;">
+          📍 Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+        </p>
+        <p style="margin-bottom: 10px;">📧 learnup@ac.id</p>
+        <p style="margin-bottom: 10px;">📞 +62 8428448903<br>📞 +62 9475484959</p>
+        <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 20px;">
+          <span>🌐</span><span>🐦</span><span>📸</span><span>💼</span><span>▶</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 14px; border-top: 1px solid #ffffff33; padding-top: 20px;">
+      <span>Terms & Conditions</span>
+      <span>Privacy Policy</span>
+    </div>
+  </footer>
+</body>
+</html>
